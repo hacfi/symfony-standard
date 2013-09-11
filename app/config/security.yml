@@ -21,7 +21,7 @@ security:
             security: false
 
         static:
-            pattern:  ^/css|images|img|js)/
+            pattern:  ^/(css|images|img|js)/
             security: false
 
         login:
@@ -30,13 +30,13 @@ security:
 
         app:
             pattern:    ^/
+            anonymous: ~
             form_login:
                 check_path: login_check
                 login_path: login
             logout:
                 path:   logout
                 target: home
-            #anonymous: ~
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY } # requires_channel: https 
